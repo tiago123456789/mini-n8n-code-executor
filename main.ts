@@ -29,6 +29,10 @@ const runCode = async (code: string, params: { [key: string]: any }) => {
   return data;
 };
 
+app.get("/health", (req, res) => {
+  res.sendStatus(200);
+});
+
 app.post("/execute", async (req, res) => {
   let code = req.body.code;
   let params = req.body.params || {};
